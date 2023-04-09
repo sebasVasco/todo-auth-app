@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "todo-auth-app-48c80": {
+      "hosting": {
+        "todo-auth-app": [
+          "todo-auth-app-48c80"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "todo-auth-app-48c80"
+  }
+}

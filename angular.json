@@ -119,8 +119,21 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "todo-auth-app:build:production",
+            "firebaseProject": "todo-auth-app-48c80",
+            "firebaseHostingSite": "todo-auth-app-48c80"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "59452db6-e825-45c6-92ee-b89c0bfdd28d"
   }
 }
