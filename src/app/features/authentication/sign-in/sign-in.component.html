@@ -1,0 +1,55 @@
+<app-authentication-layout>
+  <p card-title class="text-center">Login to your account</p>
+  <div card-body class="row">
+    <div class="col-12 mb-3">
+      <ngb-alert [dismissible]="false" type="info">
+        <p><strong>Login with user!</strong> mail@mail.com | 123456</p>
+      </ngb-alert>
+    </div>
+    <form [formGroup]="loginForm">
+      <div class="col-12 mb-3">
+        <label for="email" class="form-label">email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="email"
+          formControlName="email"
+          [ngClass]="{ 'is-invalid': emailInvalid }"
+        />
+        <div class="invalid-feedback" *ngIf="emailIsRequiredMessage">
+          {{ emailIsRequiredMessage }}
+        </div>
+        <div class="invalid-feedback" *ngIf="emailValidEmailMessage">
+          {{ emailValidEmailMessage }}
+        </div>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Password"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': passwordInvalid }"
+        />
+        <div class="invalid-feedback" *ngIf="passwordIsRequiredMessage">
+          {{ passwordIsRequiredMessage }}
+        </div>
+      </div>
+      <div class="col-12">
+        <button
+          type="button"
+          class="btn btn-primary w-100"
+          [disabled]="loginForm.invalid || loading"
+          (click)="signin()"
+        >
+          Sign In
+        </button>
+      </div>
+    </form>
+  </div>
+</app-authentication-layout>
+
+<app-toast-container></app-toast-container>
