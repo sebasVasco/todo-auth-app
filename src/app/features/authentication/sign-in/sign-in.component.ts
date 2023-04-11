@@ -65,8 +65,7 @@ export class SignInComponent {
     const password = this.password?.value ? this.password.value : '';
     this.loading = true;
     this.authService.signin(email, password).subscribe(
-      (userData) => {
-        console.log(userData);
+      () => {
         this.loading = false;
         this.toastService.show('Login success', {
           classname: 'bg-success text-light',

@@ -11,4 +11,8 @@ export class AuthService {
   signin(email: string, password: string): Observable<any> {
     return from(this.auth.signInWithEmailAndPassword(email, password));
   }
+
+  signup(email: string, password: string): Observable<any> {
+    return from(this.auth.createUserWithEmailAndPassword(email, password));
+  }
 }
