@@ -1,9 +1,9 @@
 <app-authentication-layout>
-  <p card-title class="text-center">Login to your account</p>
+  <p card-title class="text-center">Sign in to your account</p>
   <div card-body class="row">
     <div class="col-12 mb-3">
       <ngb-alert [dismissible]="false" type="info">
-        <p><strong>Login with user!</strong> mail@mail.com | 123456</p>
+        <p><strong>Sign in with user!</strong> mail@mail.com | 123456</p>
       </ngb-alert>
     </div>
     <form [formGroup]="loginForm">
@@ -38,7 +38,7 @@
           {{ passwordIsRequiredMessage }}
         </div>
       </div>
-      <div class="col-12">
+      <div class="col-12 mb-3">
         <button
           type="button"
           class="btn btn-primary w-100"
@@ -47,6 +47,11 @@
         >
           Sign In
         </button>
+      </div>
+      <div class="col-12">
+        <p class="text-center">
+          Don't have an account? <a routerLink="../sign-up">sign up</a>
+        </p>
       </div>
     </form>
   </div>

@@ -6,11 +6,11 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'sign-in',
     pathMatch: 'full',
   },
   {
-    path: 'login',
+    path: 'sign-in',
     component: SignInComponent,
   },
   {
