@@ -1,0 +1,67 @@
+<ng-container *ngIf="!loading; else loadingTemplate">
+  <div class="container">
+    <div class="d-flex flex-row-reverse">
+      <app-todo-form [todoCount]="todoCount"></app-todo-form>
+    </div>
+    <div class="h-100 mt-2 p-4" cdkDropListGroup>
+      <div class="h-100 row gx-3">
+        <div class="col-4 card">
+          <h1 class="text-center">Todo</h1>
+          <div
+            cdkDropList
+            class="todo-list"
+            (cdkDropListDropped)="drop($event, 'todo')"
+            [cdkDropListData]="todos"
+          >
+            <div class="card p-2 m-3" cdkDrag *ngFor="let todo of todos">
+              <p><strong>Title: </strong>{{ todo.title }}</p>
+              <p><strong>Description: </strong>{{ todo.description }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 card">
+          <h1 class="text-center">Active</h1>
+          <div
+            cdkDropList
+            class="todo-list"
+            (cdkDropListDropped)="drop($event, 'active')"
+            [cdkDropListData]="activeTodos"
+          >
+            <div
+              class="card p-2 m-3"
+              cdkDrag
+              *ngFor="let activeTodo of activeTodos"
+            >
+              <p><strong>Title: </strong>{{ activeTodo.title }}</p>
+              <p><strong>Description: </strong>{{ activeTodo.description }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 card">
+          <h1 class="text-center">Completed</h1>
+          <div
+            cdkDropList
+            class="todo-list"
+            (cdkDropListDropped)="drop($event, 'completed')"
+            [cdkDropListData]="completedTodos"
+          >
+            <div
+              class="card p-2 m-3"
+              cdkDrag
+              *ngFor="let completedTodo of completedTodos"
+            >
+              <p><strong>Title: </strong>{{ completedTodo.title }}</p>
+              <p>
+                <strong>Description: </strong>{{ completedTodo.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loadingTemplate>
+  <p>Loading</p>
+</ng-template>
