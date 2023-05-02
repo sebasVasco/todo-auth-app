@@ -1,5 +1,5 @@
 <ng-container *ngIf="!loading; else loadingTemplate">
-  <div class="container">
+  <div class="container d-none d-sm-block">
     <div class="d-flex flex-row-reverse">
       <app-todo-form [todoCount]="todoCount"></app-todo-form>
     </div>
@@ -59,6 +59,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="text-center d-block d-sm-none">
+    <h4>Todos not available in this resolution!!!</h4>
   </div>
 </ng-container>
 
